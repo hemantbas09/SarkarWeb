@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import type { Lang } from '../../i18n/types'
 import { useLanguage } from '../../i18n'
-import { devanagariToRoman } from '../../utils/devanagariToRoman'
 import './VoiceSearchButton.scss'
 
 interface RecognitionAlternative {
@@ -83,7 +82,7 @@ function VoiceSearchButton({
     recognition.onresult = (event) => {
       const transcript = event.results[event.resultIndex]?.[0]?.transcript.trim()
       if (transcript) {
-        onTranscript(lang === 'np' ? devanagariToRoman(transcript) : transcript)
+        onTranscript(transcript)
       }
     }
     recognition.onerror = ({ error }) => {

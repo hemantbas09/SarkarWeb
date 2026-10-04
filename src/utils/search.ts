@@ -1,4 +1,5 @@
 import type { CategoryItem } from '../data/categories'
+import { devanagariToRoman } from './devanagariToRoman'
 
 /**
  * Tag match strength for a lowercased query. Returns a tier number
@@ -237,8 +238,12 @@ export function scoreItem(item: CategoryItem, q: string): number {
   if (name === q) return 0
   const tag = tagScore(item, q)
   if (q === 'kar' && tag === 0) return 0
+
+  // Short queries are commonly university abbreviations (TU, KU, PU).
+  // Avoid matching incidental two-letter substrings such as "tu" in "university".
+  if (q.length <= 2) return tag === 0 ? 0 : -1
+
   if (tag === 1) return 1
-  if (tag === 0) return 2
   if (name.includes(q)) return 3
   const syn = synonymScore(item, q)
   if (syn === 4) return 4
@@ -263,8 +268,23 @@ export function searchItems(
   const q = query.trim().toLowerCase()
   if (!q) return items
 
+  const romanQuery = devanagariToRoman(q).toLowerCase()
+
   return items
-    .map((item) => ({ item, score: scoreItem(item, q) }))
+    .map((item) => {
+      const directScore = scoreItem(item, q)
+      const romanScore =
+        romanQuery !== q ? scoreItem(item, romanQuery) : -1
+      const nepaliRoman = devanagariToRoman(item.nepali).toLowerCase()
+      const nepaliScore = nepaliRoman.includes(q) ? 5 : -1
+      const score = Math.min(
+        directScore < 0 ? Infinity : directScore,
+        romanScore < 0 ? Infinity : romanScore,
+        nepaliScore < 0 ? Infinity : nepaliScore,
+      )
+
+      return { item, score }
+    })
     .filter((entry) => entry.score >= 0)
     .sort(
       (a, b) => a.score - b.score || a.item.name.localeCompare(b.item.name),
