@@ -157,16 +157,16 @@ function SearchBar() {
         </span>
         {t.hero.quickChips.map((chip) => (
           <button
-            key={chip}
-            className={`search-bar__chip${query === chip ? ' search-bar__chip--active' : ''}`}
+            key={chip.query}
+            className={`search-bar__chip${query === chip.query ? ' search-bar__chip--active' : ''}`}
             type="button"
             onClick={() => {
-              setQuery(chip)
+              setQuery(chip.query)
               setFocused(true)
               inputRef.current?.focus()
             }}
           >
-            {chip}
+            {chip.label}
           </button>
         ))}
       </div>

@@ -55,7 +55,7 @@ export interface Dictionary {
     subheading: string
     searchPlaceholder: string
     popularSearchesLabel: string
-    quickChips: string[]
+    quickChips: { label: string; query: string }[]
     noResults: (query: string) => string
   }
   essential: {

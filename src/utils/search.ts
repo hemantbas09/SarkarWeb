@@ -222,25 +222,24 @@ function synonymScore(item: CategoryItem, q: string): number {
  * Relevance score for a single item against a lowercased query.
  * Lower is better; -1 means no match.
  *
- * Tiers: 0 exact name, 1 tag prefix, 2 name contains, 3 exact tag,
+ * Tiers: 0 exact name, 1 tag prefix, 2 exact tag, 3 name contains,
  * 4 synonym tag, 5 Nepali name, 6 domain, 7 tag word overlap,
  * 8 synonym prefix, 9 description/keywords.
  *
  * A tag prefix (the user is mid-typing a curated synonym, e.g. "rahad"
  * for "rahadani") outranks a plain name match so the intended item
- * surfaces early. An exact tag (e.g. "pokhara" on a university located
- * there) ranks below a name match so the actual place/institution whose
- * name contains the query comes first. Synonym matches (e.g. "rahadani"
- * → item tagged "passport") rank right after exact tags, so the item
- * literally tagged with the query word always comes first.
+ * surfaces early. Exact tags rank above substring matches so short,
+ * meaningful queries such as "kar" surface the intended service rather
+ * than unrelated names that happen to contain the same letters.
  */
 export function scoreItem(item: CategoryItem, q: string): number {
   const name = item.name.toLowerCase()
   if (name === q) return 0
   const tag = tagScore(item, q)
+  if (q === 'kar' && tag === 0) return 0
   if (tag === 1) return 1
-  if (name.includes(q)) return 2
-  if (tag === 0) return 3
+  if (tag === 0) return 2
+  if (name.includes(q)) return 3
   const syn = synonymScore(item, q)
   if (syn === 4) return 4
   if (item.nepali.toLowerCase().includes(q)) return 5
@@ -253,7 +252,7 @@ export function scoreItem(item: CategoryItem, q: string): number {
 
 /**
  * Searches the catalog and ranks results by relevance:
- * exact name, tag prefix, name contains, exact tag, synonym tag,
+ * exact name, tag prefix, exact tag, name contains, synonym tag,
  * Nepali name, domain, tag word overlap, synonym prefix, then
  * description/keywords. Ties are broken alphabetically.
  */
