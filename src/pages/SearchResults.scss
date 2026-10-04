@@ -11,11 +11,20 @@
     width: 100%;
     max-width: 80rem;
     margin: 0 auto;
-    padding: $space-md $margin-mobile $space-md;
+    padding: 0 $margin-mobile $space-md;
   }
 
   &__toolbar {
+    margin-top: $space-md;
     margin-bottom: $space-sm;
+  }
+
+  &__title {
+    margin: 0;
+    color: $on-surface;
+    font-size: $headline-md-size;
+    line-height: $headline-md-line;
+    font-weight: $headline-md-weight;
   }
 
   &__layout {
@@ -113,7 +122,13 @@
     padding-bottom: 0;
 
     &__container {
-      padding: $space-sm $margin $space-lg;
+      padding: 0 $margin $space-lg;
+    }
+
+    &__title {
+      font-size: $headline-lg-size;
+      line-height: $headline-lg-line;
+      font-weight: $headline-lg-weight;
     }
 
     &__layout {
