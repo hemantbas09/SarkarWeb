@@ -28,23 +28,15 @@
   "essentialSection": {
     "eyebrow": "Fast Direct Access",
     "title": "Essential Government Portals",
-    "description": "Primary executive points of contact, central ministries, and critical citizen registration services.",
+    "description": "Quick access to essential passport, tax, transport, and immigration services.",
     "portals": [
       {
-        "icon": "account_balance",
-        "name": "Office of the Prime Minister and Council of Ministers",
-        "nepali": "प्रधानमन्त्री तथा मन्त्रिपरिषद्को कार्यालय",
-        "domain": "opmcm.gov.np",
-        "url": "https://opmcm.gov.np",
-        "description": "Apex executive body overseeing federal policies, governance directives, and cabinet actions."
-      },
-      {
-        "icon": "shield",
-        "name": "Ministry of Home Affairs",
-        "nepali": "गृह मन्त्रालय",
-        "domain": "moha.gov.np",
-        "url": "https://moha.gov.np",
-        "description": "Internal security, national emergency relief, district administration, and citizenship."
+        "icon": "badge",
+        "name": "Department of Passports",
+        "nepali": "राहदानी विभाग",
+        "domain": "nepalpassport.gov.np",
+        "url": "https://nepalpassport.gov.np",
+        "description": "Official electronic passport issuance, pre-enrollment booking system, and verification services."
       },
       {
         "icon": "receipt_long",
@@ -55,12 +47,20 @@
         "description": "Taxpayer registration, PAN filing, VAT assessments, and online corporate and individual revenue services."
       },
       {
-        "icon": "badge",
-        "name": "Department of Passports",
-        "nepali": "राहदानी विभाग",
-        "domain": "nepalpassport.gov.np",
-        "url": "https://nepalpassport.gov.np",
-        "description": "Official electronic passport issuance, pre-enrollment booking system, and verification services."
+        "icon": "directions_car",
+        "name": "Department of Transport Management",
+        "nepali": "यातायात व्यवस्था विभाग",
+        "domain": "dotm.gov.np",
+        "url": "https://dotm.gov.np",
+        "description": "Vehicle registration, driving license services, and road transport information."
+      },
+      {
+        "icon": "flight_land",
+        "name": "Department of Immigration",
+        "nepali": "अध्यागमन विभाग",
+        "domain": "immigration.gov.np",
+        "url": "https://immigration.gov.np",
+        "description": "Visa information and immigration services for travel to and from Nepal."
       }
     ]
   },

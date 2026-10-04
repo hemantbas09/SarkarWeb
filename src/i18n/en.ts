@@ -32,16 +32,16 @@ export const en: Dictionary = {
     eyebrow: 'Fast Direct Access',
     title: 'Essential Government Portals',
     description:
-      'Primary executive points of contact, central ministries, and critical citizen registration services.',
+      'Quick access to essential passport, tax, transport, and immigration services.',
     portalDescriptions: {
-      'opmcm.gov.np':
-        'Apex executive body overseeing federal policies, governance directives, and cabinet actions.',
-      'moha.gov.np':
-        'Internal security, national emergency relief, district administration, and citizenship.',
       'ird.gov.np':
         'Taxpayer registration, PAN filing, VAT assessments, and online corporate and individual revenue services.',
       'nepalpassport.gov.np':
         'Official electronic passport issuance, pre-enrollment booking system, and verification services.',
+      'dotm.gov.np':
+        'Vehicle registration, driving license services, and road transport information.',
+      'immigration.gov.np':
+        'Visa information and immigration services for travel to and from Nepal.',
     },
   },
   banner: {
