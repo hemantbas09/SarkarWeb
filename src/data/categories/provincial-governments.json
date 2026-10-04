@@ -96,12 +96,26 @@
       "icon": "map",
       "name": "Koshi Province",
       "nepali": "कोशी प्रदेश",
-      "domain": "koshi.gov.np",
-      "description": "Official portal of Koshi Province, the easternmost province, covering assembly, executive, and provincial services.",
-      "keywords": "koshi province east koshi.gov.np",
+      "domain": "ocmcm.koshi.gov.np",
+      "description": "Office of the Chief Minister and Council of Ministers, Koshi Province.",
+      "keywords": "koshi province chief minister council ministers government east ocmcm.koshi.gov.np",
       "tags": ["koshi", "province", "pradesh", "प्रदेश", "east"],
-      "url": "https://koshi.gov.np",
-      "id": "koshi.gov.np"
+      "url": "https://ocmcm.koshi.gov.np",
+      "id": "ocmcm.koshi.gov.np"
+    },
+    {
+      "code": "provincial-governments",
+      "sector": "east",
+      "sectorLabel": "Eastern Nepal",
+      "icon": "map",
+      "name": "Madhesh Province",
+      "nepali": "मधेश प्रदेश",
+      "domain": "ocmcm.madhesh.gov.np",
+      "description": "Office of the Chief Minister and Council of Ministers, Madhesh Province.",
+      "keywords": "madhesh province janakpur chief minister council ministers government ocmcm.madhesh.gov.np pradesh मधेश",
+      "tags": ["madhesh", "province", "pradesh", "प्रदेश", "janakpur"],
+      "url": "https://ocmcm.madhesh.gov.np",
+      "id": "ocmcm.madhesh.gov.np"
     },
     {
       "code": "provincial-governments",
@@ -110,12 +124,40 @@
       "icon": "map",
       "name": "Bagmati Province",
       "nepali": "बागमती प्रदेश",
-      "domain": "bagmati.gov.np",
-      "description": "Official portal of Bagmati Province, home to the capital Kathmandu, covering provincial governance and services.",
-      "keywords": "bagmati province kathmandu bagmati.gov.np",
+      "domain": "ocmcm.bagamati.gov.np",
+      "description": "Office of the Chief Minister and Council of Ministers, Bagmati Province.",
+      "keywords": "bagmati province kathmandu chief minister council ministers government ocmcm.bagamati.gov.np",
       "tags": ["bagmati", "province", "pradesh", "प्रदेश", "kathmandu"],
-      "url": "https://bagmati.gov.np",
-      "id": "bagmati.gov.np"
+      "url": "https://ocmcm.bagamati.gov.np",
+      "id": "ocmcm.bagamati.gov.np"
+    },
+    {
+      "code": "provincial-governments",
+      "sector": "west",
+      "sectorLabel": "Western Nepal",
+      "icon": "map",
+      "name": "Gandaki Province",
+      "nepali": "गण्डकी प्रदेश",
+      "domain": "ocmcm.gandaki.gov.np",
+      "description": "Office of the Chief Minister and Council of Ministers, Gandaki Province.",
+      "keywords": "gandaki province pokhara chief minister council ministers government ocmcm.gandaki.gov.np pradesh गण्डकी",
+      "tags": ["gandaki", "province", "pradesh", "प्रदेश", "pokhara"],
+      "url": "https://ocmcm.gandaki.gov.np",
+      "id": "ocmcm.gandaki.gov.np"
+    },
+    {
+      "code": "provincial-governments",
+      "sector": "west",
+      "sectorLabel": "Western Nepal",
+      "icon": "map",
+      "name": "Lumbini Province",
+      "nepali": "लुम्बिनी प्रदेश",
+      "domain": "ocmcm.lumbini.gov.np",
+      "description": "Office of the Chief Minister and Council of Ministers, Lumbini Province.",
+      "keywords": "lumbini province deukhuri butwal chief minister council ministers government ocmcm.lumbini.gov.np pradesh लुम्बिनी",
+      "tags": ["lumbini", "province", "pradesh", "प्रदेश", "deukhuri", "butwal"],
+      "url": "https://ocmcm.lumbini.gov.np",
+      "id": "ocmcm.lumbini.gov.np"
     },
     {
       "code": "provincial-governments",
@@ -124,12 +166,26 @@
       "icon": "map",
       "name": "Karnali Province",
       "nepali": "कर्णाली प्रदेश",
-      "domain": "karnali.gov.np",
-      "description": "Official portal of Karnali Province, the westernmost and most remote province, covering provincial governance.",
-      "keywords": "karnali province west karnali.gov.np",
+      "domain": "ocmcm.karnali.gov.np",
+      "description": "Office of the Chief Minister and Council of Ministers, Karnali Province.",
+      "keywords": "karnali province chief minister council ministers government west ocmcm.karnali.gov.np",
       "tags": ["karnali", "province", "pradesh", "प्रदेश", "west"],
-      "url": "https://karnali.gov.np",
-      "id": "karnali.gov.np"
+      "url": "https://ocmcm.karnali.gov.np",
+      "id": "ocmcm.karnali.gov.np"
+    },
+    {
+      "code": "provincial-governments",
+      "sector": "west",
+      "sectorLabel": "Western Nepal",
+      "icon": "map",
+      "name": "Sudurpashchim Province",
+      "nepali": "सुदूरपश्चिम प्रदेश",
+      "domain": "ocmcm.sudurpashchim.gov.np",
+      "description": "Office of the Chief Minister and Council of Ministers, Sudurpashchim Province.",
+      "keywords": "sudurpashchim sudurpaschim province dhanagadhi chief minister council ministers government ocmcm.sudurpashchim.gov.np pradesh सुदूरपश्चिम",
+      "tags": ["sudurpashchim", "sudurpaschim", "province", "pradesh", "प्रदेश", "dhangadhi"],
+      "url": "https://ocmcm.sudurpashchim.gov.np",
+      "id": "ocmcm.sudurpashchim.gov.np"
     }
   ]
 }
