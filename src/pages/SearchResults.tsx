@@ -4,17 +4,12 @@ import data from '../data/searchResults.json'
 import categoryData from '../data/categories'
 import { useLanguage } from '../i18n'
 import { searchItems } from '../utils/search'
-import Breadcrumb from '../components/Breadcrumb/Breadcrumb'
 import SearchInput from '../components/SearchInput/SearchInput'
 import ResultsSummary from '../components/ResultsSummary/ResultsSummary'
-import ResultCard from '../components/ResultCard/ResultCard'
+import PortalCard from '../components/PortalCard/PortalCard'
 import Pagination from '../components/Pagination/Pagination'
-import SearchInsight from '../components/SearchInsight/SearchInsight'
-import RelatedServices from '../components/RelatedServices/RelatedServices'
-import NotFoundCard from '../components/NotFoundCard/NotFoundCard'
 import './SearchResults.scss'
 
-const categories = categoryData.categories
 const items = categoryData.items
 
 function SearchResults() {
@@ -52,14 +47,6 @@ function SearchResults() {
 
   return (
     <div className="search-results">
-      <Breadcrumb
-        icon={data.breadcrumb.icon}
-        items={[
-          { label: t.search.breadcrumbDirectory, path: '/' },
-          { label: t.search.breadcrumbResults, path: '/search' },
-        ]}
-        current={query}
-      />
       <div className="search-results__container">
         <div className="search-results__toolbar">
           <SearchInput
@@ -124,26 +111,11 @@ function SearchResults() {
                     </div>
                   </div>
                 ) : (
-                  paged.map((item, index) => (
-                    <ResultCard
-                      key={item.id}
-                      item={item}
-                      category={categories[item.code as keyof typeof categories]}
-                      query={urlQuery}
-                      featured={index === 0}
-                    />
+                  paged.map((item) => (
+                    <PortalCard key={item.id} item={item} compact />
                   ))
                 )}
-                <div className="search-results__notfound-mobile">
-                  <NotFoundCard />
-                </div>
               </div>
-
-              <aside className="search-results__sidebar">
-                <SearchInsight />
-                <NotFoundCard />
-                <RelatedServices />
-              </aside>
             </div>
 
             <Pagination

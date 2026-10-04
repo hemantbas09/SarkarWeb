@@ -8,8 +8,10 @@ type PortalCardItem = EssentialPortal | CategoryItem
 
 function PortalCard({
   item,
+  compact = false,
 }: {
   item: PortalCardItem
+  compact?: boolean
 }) {
   const { lang, t } = useLanguage()
   const isCategoryItem = 'sectorLabel' in item
@@ -20,7 +22,7 @@ function PortalCard({
 
   return (
     <a
-      className="portal-card"
+      className={`portal-card${compact ? ' portal-card--compact' : ''}`}
       href={item.url}
       target="_blank"
       rel="noopener noreferrer"

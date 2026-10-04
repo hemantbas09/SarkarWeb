@@ -17,7 +17,7 @@
     "visitLabel": "Visit Website"
   },
   "pagination": {
-    "pageSize": 5,
+    "pageSize": 9,
     "showingLabel": "Showing",
     "ofLabel": "of",
     "prevLabel": "Previous page",

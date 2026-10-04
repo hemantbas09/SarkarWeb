@@ -106,4 +106,41 @@
       right: 16px;
     }
   }
+
+  &--compact {
+    min-height: 7.25rem;
+    padding: $space-sm $space-md;
+
+    .portal-card__logo {
+      width: 2rem;
+      height: 2rem;
+      margin-bottom: $space-xs;
+    }
+
+    .portal-card__logo-image,
+    .portal-card__logo-fallback {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+
+    .portal-card__title {
+      margin-bottom: $space-xs;
+      font-size: $title-sm-size;
+      line-height: $title-sm-line;
+    }
+
+    .portal-card__description {
+      -webkit-line-clamp: 2;
+    }
+
+    .portal-card__arrow {
+      top: $space-sm;
+      right: $space-md;
+    }
+
+    @media (min-width: $bp-md) {
+      min-height: 7.25rem;
+      padding: $space-sm $space-md;
+    }
+  }
 }
