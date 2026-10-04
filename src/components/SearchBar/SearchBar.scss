@@ -108,8 +108,10 @@
     border: none;
     border-radius: $radius-lg;
     background: transparent;
+    color: inherit;
     font-family: inherit;
     text-align: left;
+    text-decoration: none;
     cursor: pointer;
     transition: background-color 0.15s ease;
 

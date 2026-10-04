@@ -96,12 +96,13 @@ function SearchBar() {
                 </div>
               ) : (
                 results.map((item) => (
-                  <button
+                  <a
                     key={item.id}
-                    type="button"
                     className="search-bar__result"
+                    href={item.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     onMouseDown={(e) => e.preventDefault()}
-                    onClick={goAll}
                   >
                     <div className="search-bar__result-info">
                       <span className="search-bar__result-name">
@@ -124,7 +125,7 @@ function SearchBar() {
                         north_east
                       </span>
                     </div>
-                  </button>
+                  </a>
                 ))
               )}
             </div>
