@@ -3,16 +3,14 @@ import { useSearchParams } from 'react-router-dom'
 import data from '../data/categories'
 import { scoreItem } from '../utils/search'
 import { useLanguage, type CategoryKey } from '../i18n'
-import Breadcrumb from '../components/Breadcrumb/Breadcrumb'
 import CategoryHero from '../components/CategoryHero/CategoryHero'
 import CategorySearch from '../components/CategorySearch/CategorySearch'
 import RegionFilter from '../components/RegionFilter/RegionFilter'
 import SinghaDurbarInset from '../components/SinghaDurbarInset/SinghaDurbarInset'
-import MinistryCard from '../components/MinistryCard/MinistryCard'
+import PortalCard from '../components/PortalCard/PortalCard'
 import Pagination from '../components/Pagination/Pagination'
 import CategoryEmptyState from '../components/CategoryEmptyState/CategoryEmptyState'
 import TrustNotice from '../components/TrustNotice/TrustNotice'
-import RelatedBranches from '../components/RelatedBranches/RelatedBranches'
 import './CategoryPage.scss'
 
 const categories = data.categories
@@ -106,37 +104,38 @@ function CategoryPage() {
   return (
     <div className="category-page">
       <div className="category-page__band">
-        <Breadcrumb
-          icon={data.breadcrumb.icon}
-          items={[
-            { label: t.categoryPage.breadcrumbHome, path: '/' },
-            { label: t.categoryPage.breadcrumbCategories, path: '/' },
-          ]}
-          current={dict.breadcrumbCurrent}
-          alwaysVisible
-        />
         <div className="category-page__container">
-          <CategoryHero hero={category.hero} categoryKey={key as CategoryKey} />
-          <CategorySearch
-            search={category.search}
-            categoryKey={key as CategoryKey}
-            value={query}
-            onChange={setQuery}
-            activeSector={activeSector}
-            onSelectSector={setActiveSector}
-            visibleCount={filtered.length}
-          />
-          {regionFilter && (
-            <RegionFilter
-              config={dict.regionFilter ?? regionFilter}
-              provinces={provinces}
-              districts={districts}
-              activeProvince={activeProvince}
-              activeDistrict={activeDistrict}
-              onSelectProvince={handleSelectProvince}
-              onSelectDistrict={setActiveDistrict}
+          <section className="category-page__toolbar-card">
+            <CategoryHero
+              hero={category.hero}
+              categoryKey={key as CategoryKey}
+              totalCount={category.search.totalCount}
             />
-          )}
+            <div
+              className={`category-page__toolbar-controls${
+                regionFilter ? ' category-page__toolbar-controls--with-region' : ''
+              }`}
+            >
+              <CategorySearch
+                categoryKey={key as CategoryKey}
+                value={query}
+                onChange={setQuery}
+                activeSector={activeSector}
+                onSelectSector={setActiveSector}
+              />
+              {regionFilter && (
+                <RegionFilter
+                  config={dict.regionFilter ?? regionFilter}
+                  provinces={provinces}
+                  districts={districts}
+                  activeProvince={activeProvince}
+                  activeDistrict={activeDistrict}
+                  onSelectProvince={handleSelectProvince}
+                  onSelectDistrict={setActiveDistrict}
+                />
+              )}
+            </div>
+          </section>
         </div>
       </div>
 
@@ -144,7 +143,7 @@ function CategoryPage() {
         {singhaDurbar && <SinghaDurbarInset singhaDurbar={singhaDurbar} />}
         <div className="category-page__grid">
           {paged.map((item) => (
-            <MinistryCard key={item.id} ministry={item} />
+            <PortalCard key={item.id} item={item} />
           ))}
         </div>
         {filtered.length === 0 && (
@@ -170,7 +169,6 @@ function CategoryPage() {
           trustNotice={category.trustNotice}
           categoryKey={key as CategoryKey}
         />
-        <RelatedBranches />
       </div>
     </div>
   )

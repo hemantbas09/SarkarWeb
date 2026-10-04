@@ -90,7 +90,7 @@
       "allDistricts": "All Districts"
     },
     "pagination": {
-      "pageSize": 5,
+      "pageSize": 8,
       "showingLabel": "Showing",
       "ofLabel": "of",
       "prevLabel": "Previous page",

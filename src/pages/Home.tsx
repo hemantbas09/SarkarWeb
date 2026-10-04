@@ -38,13 +38,10 @@ function Home() {
             </div>
             <h2 className="app__section-title">{t.essential.title}</h2>
           </div>
-          <p className="app__section-description">
-            {t.essential.description}
-          </p>
         </div>
         <div className="app__portal-grid">
           {data.essentialSection.portals.map((portal) => (
-            <PortalCard key={portal.domain} portal={portal} />
+            <PortalCard key={portal.domain} item={portal} />
           ))}
         </div>
       </section>
@@ -67,9 +64,6 @@ function Home() {
               {t.categoriesSection.title}
             </h2>
           </div>
-          <p className="app__section-description">
-            {t.categoriesSection.description}
-          </p>
         </div>
         <div className="app__category-grid">
           {data.categoriesSection.categories.map((category) => (

@@ -1,48 +1,33 @@
-import data from '../../data/homepage.json'
 import { useLanguage } from '../../i18n'
 import './TrustBanner.scss'
 
 function TrustBanner() {
-  const { trustSection } = data
-  const { t } = useLanguage()
+  const { lang, t } = useLanguage()
 
   return (
     <section className="trust">
-      <div className="trust__card">
-        <span
-          className="material-symbols-outlined trust__watermark"
-          aria-hidden="true"
-        >
-          verified_user
-        </span>
-        <div className="trust__main">
+      <div className="trust__card" lang={lang === 'np' ? 'ne' : 'en'}>
+        <div className="trust__intro">
           <div className="trust__icon-wrap">
             <span className="material-symbols-outlined trust__icon">
               lock
             </span>
           </div>
           <div className="trust__text">
-            <div className="trust__eyebrow-row">
-              <span className="trust__eyebrow">{t.trust.eyebrow}</span>
-              <span className="trust__dot" aria-hidden="true" />
-              <span className="trust__standards">{t.trust.standards}</span>
-            </div>
             <h3 className="trust__title">{t.trust.title}</h3>
             <p className="trust__description">{t.trust.description}</p>
           </div>
         </div>
-        <div className="trust__features">
-          {t.trust.features.map((feature, index) => (
-            <div key={index} className="trust__feature">
-              <span className="material-symbols-outlined trust__feature-icon">
-                {trustSection.features[index].icon}
+        <div className="trust__tips">
+          {t.trust.tips.map((tip, index) => (
+            <div key={tip.title} className="trust__tip">
+              <span className="trust__number">
+                {new Intl.NumberFormat(lang === 'np' ? 'ne-NP' : 'en').format(
+                  index + 1,
+                )}
               </span>
-              <div className="trust__feature-text">
-                <span className="trust__feature-title">{feature.title}</span>
-                <span className="trust__feature-subtitle">
-                  {feature.subtitle}
-                </span>
-              </div>
+              <h4 className="trust__tip-title">{tip.title}</h4>
+              <p className="trust__tip-description">{tip.description}</p>
             </div>
           ))}
         </div>

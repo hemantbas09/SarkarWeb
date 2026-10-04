@@ -69,7 +69,7 @@
   &__portal-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: $space-sm;
+    gap: $gutter-mobile;
   }
 
   &__category-grid {
@@ -80,8 +80,7 @@
 
   @media (min-width: $bp-sm) {
     &__portal-grid {
-      grid-template-columns: repeat(2, 1fr);
-      gap: $gutter-mobile;
+      gap: $gutter;
     }
 
     &__category-grid {
@@ -128,8 +127,7 @@
     }
 
     &__portal-grid {
-      grid-template-columns: repeat(4, 1fr);
-      gap: $gutter;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
     }
 
     &__category-grid {

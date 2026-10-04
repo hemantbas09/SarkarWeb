@@ -19,10 +19,8 @@ function RegionFilter({
 }) {
   return (
     <div className="region-filter">
-      <div className="region-filter__field">
-        <span className="material-symbols-outlined region-filter__icon">
-          public
-        </span>
+      <label className="region-filter__field">
+        <span className="region-filter__label">Province</span>
         <select
           className="region-filter__select"
           value={activeProvince}
@@ -36,11 +34,9 @@ function RegionFilter({
             </option>
           ))}
         </select>
-      </div>
-      <div className="region-filter__field">
-        <span className="material-symbols-outlined region-filter__icon">
-          location_on
-        </span>
+      </label>
+      <label className="region-filter__field">
+        <span className="region-filter__label">District</span>
         <select
           className="region-filter__select"
           value={activeDistrict}
@@ -54,7 +50,7 @@ function RegionFilter({
             </option>
           ))}
         </select>
-      </div>
+      </label>
     </div>
   )
 }

@@ -1,205 +1,87 @@
 @use '../../styles/variables' as *;
 
 .category-hero {
-  position: relative;
-  background: $surface-container-low;
-  border-radius: $radius-xl $radius-xl 0 0;
-  padding: $space-md;
-  box-shadow: $shadow-sm;
-  overflow: hidden;
+  display: grid;
+  grid-template-columns: 3.5rem minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 1rem;
+  padding: 0 0 1.25rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid rgba($on-surface, 0.12);
 
-  &__glow {
-    display: none;
-  }
-
-  &__embellish {
-    position: absolute;
-    right: -1rem;
-    bottom: -1.5rem;
-    font-size: 130px;
-    color: $primary;
-    opacity: 0.1;
-    pointer-events: none;
+  &__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 0.8rem;
+    background: $surface-container;
+    color: $secondary;
+    font-size: 1.75rem;
   }
 
   &__content {
-    position: relative;
-    z-index: 1;
-  }
-
-  &__badge {
-    display: inline-flex;
-    align-items: center;
-    gap: $space-xs;
-    padding: $space-xs 0.625rem;
-    border-radius: $radius-full;
-    background: rgba($primary, 0.1);
-    color: $primary;
-    font-size: $label-sm-size;
-    line-height: $label-sm-line;
-    font-weight: 600;
-    margin-bottom: $space-sm;
-  }
-
-  &__badge-icon {
-    font-size: 14px;
-  }
-
-  &__badge-dot {
-    display: none;
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: $primary;
-  }
-
-  &__badge-location {
-    display: none;
-    color: $secondary;
-    font-weight: 500;
+    min-width: 0;
   }
 
   &__title-row {
-    display: flex;
-    flex-direction: column;
+    min-width: 0;
   }
 
   &__title {
-    font-size: $headline-lg-mobile-size;
-    line-height: $headline-lg-mobile-line;
-    font-weight: $headline-lg-mobile-weight;
-    letter-spacing: $headline-lg-mobile-tracking;
+    margin: 0;
     color: $on-surface;
-  }
-
-  &__nepali {
-    font-size: $title-sm-size;
-    line-height: $title-sm-line;
-    font-weight: 500;
-    color: $primary;
-    margin-top: 0.125rem;
+    font-size: 1.5rem;
+    line-height: 1.3;
+    font-weight: 600;
+    letter-spacing: -0.025em;
   }
 
   &__description {
-    font-size: $body-sm-size;
-    line-height: 1.6;
+    margin: 0.25rem 0 0;
+    color: $on-surface-variant;
+    font-size: 1rem;
+    line-height: 1.55;
+  }
+
+  &__count {
+    justify-self: end;
+    padding: 0.35rem 0.8rem;
+    border: 1px solid rgba($tertiary, 0.35);
+    border-radius: 999px;
+    background: rgba($tertiary-fixed, 0.65);
     color: $secondary;
-    margin-top: $space-sm;
-  }
-
-  &__description-desktop {
-    display: none;
-  }
-
-  &__stats {
-    display: none;
-  }
-
-  &__stat {
-    display: inline-flex;
-    align-items: center;
-    gap: $space-xs;
-    font-size: $label-md-size;
-    line-height: $label-md-line;
+    font-size: 0.95rem;
+    line-height: 1.25;
     font-weight: 600;
-    color: $on-surface;
+    white-space: nowrap;
   }
 
-  &__stat-icon {
-    font-size: 20px;
-  }
+  @media (max-width: 540px) {
+    grid-template-columns: 2.75rem minmax(0, 1fr);
+    gap: 0.75rem;
+    padding-bottom: 1rem;
 
-  @media (min-width: $bp-md) {
-    background: $surface-container-lowest;
-    border-radius: $radius-xl;
-    padding: $space-lg;
-    box-shadow: $shadow-sm;
-    overflow: hidden;
-
-    &__embellish {
-      display: none;
-    }
-
-    &__glow {
-      display: block;
-      position: absolute;
-      top: -4rem;
-      right: -4rem;
-      width: 20rem;
-      height: 20rem;
-      border-radius: 50%;
-      background: rgba($primary, 0.05);
-      filter: blur(40px);
-      pointer-events: none;
-    }
-
-    &__badge {
-      background: $surface-container-high;
-      color: $on-surface;
-      padding: $space-xs $space-md;
-      margin-bottom: $space-md;
-    }
-
-    &__badge-label {
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-
-    &__badge-icon {
-      color: $primary;
-      font-size: 18px;
-    }
-
-    &__badge-dot {
-      display: inline-block;
-    }
-
-    &__badge-location {
-      display: inline;
-    }
-
-    &__title-row {
-      flex-direction: row;
-      align-items: baseline;
-      gap: $space-md;
-      margin-bottom: $space-sm;
+    &__icon {
+      width: 2.75rem;
+      height: 2.75rem;
+      font-size: 1.45rem;
     }
 
     &__title {
-      font-size: $display-size;
-      line-height: $display-line;
-      font-weight: $display-weight;
-      letter-spacing: $display-tracking;
-    }
-
-    &__nepali {
-      font-size: $headline-md-size;
-      line-height: $headline-md-line;
-      font-weight: 400;
-      color: $secondary;
-      margin-top: 0;
+      font-size: 1.2rem;
     }
 
     &__description {
-      display: none;
+      font-size: 0.9rem;
     }
 
-    &__description-desktop {
-      display: block;
-      font-size: $body-lg-size;
-      line-height: 1.6;
-      color: $on-surface-variant;
-      max-width: 48rem;
-    }
-
-    &__stats {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: $space-lg;
-      margin-top: $space-lg;
-      padding-top: $space-md;
-      border-top: 1px solid $outline-variant;
+    &__count {
+      grid-column: 2;
+      justify-self: start;
+      margin-top: 0.25rem;
+      font-size: 0.8rem;
     }
   }
 }

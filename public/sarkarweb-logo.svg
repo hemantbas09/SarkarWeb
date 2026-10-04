@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 112 24" role="img">
+  <g transform="translate(1 2) scale(.3125)">
+    <rect width="64" height="64" rx="10" fill="#a12735"/>
+    <path d="M43 18c-3-3-7-5-12-5-9 0-15 5-15 12 0 6 4 9 12 11l6 2c4 1 6 2 6 5 0 3-3 5-8 5s-9-2-13-6l-6 7c5 5 11 8 19 8 11 0 18-6 18-14 0-7-4-10-13-13l-6-2c-4-1-5-2-5-4 0-2 2-4 6-4 4 0 7 1 10 4z" fill="#fffefa"/>
+  </g>
+  <text x="29" y="18" fill="#303030" font-family="'Public Sans', sans-serif" font-size="16" font-weight="700">SarkarWeb</text>
+</svg>

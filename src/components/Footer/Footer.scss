@@ -2,10 +2,8 @@
 
 .footer {
   width: 100%;
-  margin-top: $space-xl;
-  padding: $space-lg $gutter-mobile;
-  // Keep footer content clear of the fixed bottom nav on mobile
-  padding-bottom: calc($bottom-nav-height + env(safe-area-inset-bottom, 0px) + $space-lg);
+  margin: 8px 0 0;
+  padding: 16px;
   background: $surface-container-low;
   box-shadow: 0 -1px 8px rgba(0, 0, 0, 0.02);
   text-align: center;
@@ -17,11 +15,8 @@
 
   &__bottom {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    gap: $space-sm;
-    padding-top: $space-md;
-    border-top: 1px solid $outline-variant;
+    justify-content: center;
   }
 
   &__copyright {
@@ -30,51 +25,7 @@
     line-height: $label-sm-line;
   }
 
-  &__directory-label {
-    color: $tertiary;
-    font-size: $label-sm-size;
-    line-height: $label-sm-line;
-  }
-
-  &__back-to-top {
-    display: inline-flex;
-    align-items: center;
-    gap: $space-xs;
-    margin-top: $space-xs;
-    padding: 0;
-    border: none;
-    background: none;
-    color: $primary;
-    font-family: $font-sans;
-    font-size: $label-md-size;
-    line-height: $label-md-line;
-    cursor: pointer;
-
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-
-  &__back-to-top-icon {
-    font-size: 16px;
-  }
-
-  @media (min-width: $bp-md) {
-    padding: $space-xl $margin $space-lg;
-    text-align: left;
-
-    &__inner {
-      padding-bottom: $space-lg;
-    }
-
-    &__bottom {
-      flex-direction: row;
-      justify-content: space-between;
-      padding-top: $space-md;
-    }
-
-    &__back-to-top {
-      margin-top: 0;
-    }
+  @media (max-width: #{$bp-md - 1px}) {
+    padding-bottom: calc(16px + $bottom-nav-height + env(safe-area-inset-bottom, 0px));
   }
 }

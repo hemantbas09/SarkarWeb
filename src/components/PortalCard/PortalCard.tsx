@@ -1,52 +1,42 @@
 import data from '../../data/homepage.json'
-import { useLanguage } from '../../i18n'
+import { type CategoryItem } from '../../data/categories'
+import { itemDescription, useLanguage } from '../../i18n'
 import './PortalCard.scss'
 
+type EssentialPortal = (typeof data.essentialSection.portals)[number]
+type PortalCardItem = EssentialPortal | CategoryItem
+
 function PortalCard({
-  portal,
+  item,
 }: {
-  portal: (typeof data.essentialSection.portals)[number]
+  item: PortalCardItem
 }) {
   const { lang, t } = useLanguage()
-  const description = t.essential.portalDescriptions[portal.domain]
+  const isCategoryItem = 'sectorLabel' in item
+  const description = isCategoryItem
+    ? itemDescription(t, item, lang)
+    : t.essential.portalDescriptions[item.domain] ?? item.description
+
   return (
     <a
       className="portal-card"
-      href={portal.url}
+      href={item.url}
       target="_blank"
       rel="noopener noreferrer"
+      lang={lang === 'np' ? 'ne' : 'en'}
     >
-      <div className="portal-card__header">
-        <span className="portal-card__icon">
-          <span className="material-symbols-outlined portal-card__icon-symbol">
-            {portal.icon}
-          </span>
+      <span className="portal-card__icon" aria-hidden="true">
+        <span className="material-symbols-outlined portal-card__icon-symbol">
+          {item.icon}
         </span>
-        <span className="portal-card__verified">
-          <span className="material-symbols-outlined portal-card__verified-symbol">
-            check_circle
-          </span>
-          .gov.np
-        </span>
-      </div>
-      <span className="portal-card__nepali">
-        {lang === 'np' ? portal.name : portal.nepali}
+      </span>
+      <span className="material-symbols-outlined portal-card__arrow" aria-hidden="true">
+        north_east
       </span>
       <h3 className="portal-card__title">
-        {lang === 'np' ? portal.nepali : portal.name}
+        {lang === 'np' ? item.nepali : item.name}
       </h3>
-      <p className="portal-card__description">
-        {description ?? portal.description}
-      </p>
-      <div className="portal-card__footer">
-        <span className="portal-card__domain">{portal.domain}</span>
-        <span className="portal-card__visit">
-          {t.essential.visit}
-          <span className="material-symbols-outlined portal-card__visit-symbol">
-            north_east
-          </span>
-        </span>
-      </div>
+      <p className="portal-card__description">{description}</p>
     </a>
   )
 }

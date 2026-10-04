@@ -11,6 +11,25 @@
     width: 100%;
   }
 
+  &__toolbar-card {
+    margin-top: $space-md;
+    padding: $space-md;
+    border: 1px solid rgba($on-surface, 0.12);
+    border-radius: 0.9rem;
+    background: $surface-container-lowest;
+  }
+
+  &__toolbar-controls {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: $space-sm;
+    padding-top: $space-md;
+
+    &--with-region {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+
   &__container {
     width: 100%;
     max-width: 80rem;
@@ -21,7 +40,7 @@
 
   &__body {
     padding-top: $space-sm;
-    padding-bottom: $space-lg;
+    padding-bottom: 0;
   }
 
   &__grid {
@@ -35,8 +54,7 @@
     padding-bottom: 0;
 
     &__band {
-      background: rgba($surface-container-low, 0.6);
-      padding-bottom: $space-xl;
+      padding-bottom: $space-md;
     }
 
     &__container {
@@ -44,13 +62,29 @@
       padding-right: $margin;
     }
 
+    &__toolbar-card {
+      margin-top: $space-lg;
+      padding: $space-lg;
+    }
+
+    &__toolbar-controls {
+      grid-template-columns: minmax(0, 1fr);
+      padding-top: $space-md;
+
+      &--with-region {
+        grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.5fr);
+        align-items: center;
+        gap: $space-sm;
+      }
+    }
+
     &__body {
       padding-top: $space-xl;
-      padding-bottom: $space-xl;
+      padding-bottom: 0;
     }
 
     &__grid {
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: $gutter;
       margin-top: 0;
     }

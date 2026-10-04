@@ -9,10 +9,10 @@ export const en: Dictionary = {
     langToggleAria: 'Switch language',
   },
   hero: {
-    badge: 'Official Directory • नेपाल सरकार',
-    heading: 'Find Nepal Government Websites Easily',
+    badge: 'Government Website Directory',
+    heading: 'Government websites, all in one place',
     subheading:
-      'Find official websites of Nepal’s government offices and organizations, all in one place.',
+      'Find websites for ministries, departments, and local governments, then visit the relevant website.',
     searchPlaceholder:
       'Search government websites by name, department, or keyword...',
     popularSearchesLabel: 'Popular searches:',
@@ -33,7 +33,6 @@ export const en: Dictionary = {
     title: 'Essential Government Portals',
     description:
       'Primary executive points of contact, central ministries, and critical citizen registration services.',
-    visit: 'Visit',
     portalDescriptions: {
       'opmcm.gov.np':
         'Apex executive body overseeing federal policies, governance directives, and cabinet actions.',
@@ -59,49 +58,49 @@ export const en: Dictionary = {
     explorePortals: 'Explore portals',
     cards: {
       ministries: {
-        count: '17 Ministries',
+        countLabel: 'Ministries',
         title: 'Ministries',
         description:
           'Central executive policy portfolios including Finance, Foreign Affairs, Health, and Home.',
       },
       departments: {
-        count: '54+ Line Depts',
+        countLabel: 'Departments',
         title: 'Departments',
         description:
           'Specialized administrative and execution bodies executing public services, licensing, and records.',
       },
       commissions: {
-        count: '12 Commissions',
+        countLabel: 'Commissions',
         title: 'Commissions',
         description:
           'Constitutional, oversight, and statutory regulatory bodies maintaining institutional integrity.',
       },
       'provincial-governments': {
-        count: '7 Provinces',
+        countLabel: 'Provinces',
         title: 'Provincial Governments',
         description:
           'Koshi, Madhesh, Bagmati, Gandaki, Lumbini, Karnali, and Sudurpashchim state assemblies.',
       },
       'local-governments': {
-        count: '753 Municipalities',
+        countLabel: 'Local Governments',
         title: 'Local Governments',
         description:
           'Metropolitan cities, sub-metropolises, municipalities, and Gaunpalikas providing civic ward services.',
       },
       universities: {
-        count: '14 Universities',
+        countLabel: 'Universities',
         title: 'Universities',
         description:
           'Chartered national universities including Tribhuvan University, Kathmandu University, and regional academies.',
       },
       'public-institutions': {
-        count: '40+ Corporations',
+        countLabel: 'Public Institutions',
         title: 'Public Institutions',
         description:
           'Public sector enterprises, civil aviation, electricity authorities (NEA), and national communication boards.',
       },
       'constitutional-bodies': {
-        count: '9 Bodies',
+        countLabel: 'Bodies',
         title: 'Constitutional Bodies',
         description:
           'Supreme Court, Election Commission, CIAA, Auditor General, and National Human Rights Commission.',
@@ -135,14 +134,23 @@ export const en: Dictionary = {
     ],
   },
   trust: {
-    eyebrow: 'Official Domain Security Protocol',
-    standards: 'NITC Standards',
-    title: 'Citizen Security & Official Web Standards',
-    description:
-      'All legitimate federal, provincial, and local government platforms operate exclusively on verified .gov.np or educational .edu.np second-level domains with Transport Layer Security (TLS/HTTPS). Always verify the URL in your browser’s address bar before providing personal identity information.',
-    features: [
-      { title: 'DNSSEC Verified', subtitle: 'National IT Center Host' },
-      { title: 'Spam & Phishing Shield', subtitle: 'Zero-trust verified registry' },
+    siteLabel: 'English site (EN)',
+    title: 'Stay safe on government websites',
+    description: 'Check these 3 things before you trust a website.',
+    tips: [
+      {
+        title: 'Check the address',
+        description: 'Official Nepal government websites use the .gov.np domain.',
+      },
+      {
+        title: 'Look for HTTPS',
+        description:
+          'HTTPS encrypts your connection, but does not prove a website is official.',
+      },
+      {
+        title: 'Be careful with your details',
+        description: 'Share personal information only on websites you trust.',
+      },
     ],
   },
   footer: {
@@ -374,7 +382,7 @@ export const en: Dictionary = {
           { label: 'Municipalities', count: 275, filter: 'municipality' },
           { label: 'Gaunpalikas', count: 461, filter: 'gaunpalika' },
         ],
-        regionFilter: { allProvinces: 'All Pradesh', allDistricts: 'All Districts' },
+        regionFilter: { allProvinces: 'All provinces', allDistricts: 'All districts' },
         emptyTitle: 'No matching local governments found',
         emptyDescription: 'Try checking the spelling or clear the filter chips.',
         trustTitle: 'Official .gov.np TLD Standard',

@@ -49,13 +49,9 @@ function Header() {
           <Link to="/" className="header__brand-link" aria-label="Home">
             <img
               className="header__logo"
-              src={header.logo}
+              src="/sarkarweb-logo.svg"
               alt={header.logoAlt}
             />
-            <div className="header__titles">
-              <span className="header__title">{t.header.title}</span>
-              <span className="header__subtitle">{t.header.subtitle}</span>
-            </div>
           </Link>
         </div>
 
@@ -109,7 +105,7 @@ function Header() {
               className={`header__lang-option${lang === 'en' ? ' header__lang-option--active' : ''}`}
               onClick={() => setLang('en')}
             >
-              EN
+              English
             </button>
             <button
               type="button"

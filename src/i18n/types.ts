@@ -62,7 +62,6 @@ export interface Dictionary {
     eyebrow: string
     title: string
     description: string
-    visit: string
     portalDescriptions: Record<string, string>
   }
   banner: {
@@ -75,7 +74,7 @@ export interface Dictionary {
     title: string
     description: string
     explorePortals: string
-    cards: Record<CategoryKey, { count: string; title: string; description: string }>
+    cards: Record<CategoryKey, { countLabel: string; title: string; description: string }>
   }
   relatedBranches: {
     eyebrow: string
@@ -85,11 +84,10 @@ export interface Dictionary {
     items: { title: string; count: string; description: string }[]
   }
   trust: {
-    eyebrow: string
-    standards: string
+    siteLabel: string
     title: string
     description: string
-    features: { title: string; subtitle: string }[]
+    tips: { title: string; description: string }[]
   }
   footer: {
     copyright: string

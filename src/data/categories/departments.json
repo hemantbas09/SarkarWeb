@@ -121,7 +121,7 @@
       ]
     },
     "pagination": {
-      "pageSize": 10,
+      "pageSize": 8,
       "showingLabel": "Showing",
       "ofLabel": "of",
       "prevLabel": "Previous page",
