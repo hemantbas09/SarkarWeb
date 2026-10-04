@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import categoryData from '../../data/categories'
 import { useLanguage } from '../../i18n'
 import { searchItems } from '../../utils/search'
+import VoiceSearchButton from '../VoiceSearchButton/VoiceSearchButton'
 import './SearchBar.scss'
 
 const items = categoryData.items
@@ -87,6 +88,14 @@ function SearchBar() {
             </span>
           </button>
         )}
+        <VoiceSearchButton
+          lang={lang}
+          onTranscript={(transcript) => {
+            setQuery(transcript)
+            setFocused(true)
+            inputRef.current?.focus()
+          }}
+        />
         {showDialog && (
           <div className="search-bar__dialog">
             <div className="search-bar__dialog-list">

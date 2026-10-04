@@ -58,6 +58,15 @@ export interface Dictionary {
     quickChips: { label: string; query: string }[]
     noResults: (query: string) => string
   }
+  voiceSearch: {
+    start: string
+    stop: string
+    listening: string
+    unsupported: string
+    permissionDenied: string
+    noSpeech: string
+    error: string
+  }
   essential: {
     eyebrow: string
     title: string

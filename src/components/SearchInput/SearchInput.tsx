@@ -1,4 +1,5 @@
 import { useLanguage } from '../../i18n'
+import VoiceSearchButton from '../VoiceSearchButton/VoiceSearchButton'
 import './SearchInput.scss'
 
 function SearchInput({
@@ -10,7 +11,7 @@ function SearchInput({
   onChange: (value: string) => void
   onClear: () => void
 }) {
-  const { t } = useLanguage()
+  const { lang, t } = useLanguage()
   return (
     <div className="search-input">
       <span className="material-symbols-outlined search-input__icon">
@@ -23,6 +24,7 @@ function SearchInput({
         placeholder={t.search.searchPlaceholder}
         onChange={(e) => onChange(e.target.value)}
       />
+      <VoiceSearchButton lang={lang} onTranscript={onChange} />
       {value.length > 0 && (
         <button
           type="button"

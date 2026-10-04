@@ -1,0 +1,77 @@
+@use '../../styles/variables' as *;
+
+.voice-search {
+  position: relative;
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+
+  &__button {
+    display: flex;
+    width: 2.75rem;
+    height: 2.75rem;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    border-radius: 50%;
+    background: transparent;
+    color: $secondary;
+    cursor: pointer;
+    transition: color 0.2s ease, background-color 0.2s ease;
+
+    &:hover,
+    &:focus-visible {
+      background: $surface-container;
+      color: $primary;
+    }
+
+    &:focus-visible {
+      outline: 2px solid $primary;
+      outline-offset: 2px;
+    }
+
+    .material-symbols-outlined {
+      font-size: 22px;
+    }
+
+    &--listening {
+      background: rgba($primary, 0.1);
+      color: $primary;
+      animation: voice-search-pulse 1.2s ease-in-out infinite;
+    }
+  }
+
+  &__announcement {
+    position: absolute;
+    top: calc(100% + $space-sm);
+    right: 0;
+    z-index: 31;
+    width: max-content;
+    max-width: min(20rem, calc(100vw - 2rem));
+    padding: $space-xs $space-sm;
+    border: 1px solid $outline-variant;
+    border-radius: $radius-xl;
+    background: $surface-container-lowest;
+    box-shadow: $shadow-md;
+    color: $on-surface;
+    font-size: $label-sm-size;
+    line-height: $label-sm-line;
+    pointer-events: none;
+
+    &:empty {
+      display: none;
+    }
+  }
+}
+
+@keyframes voice-search-pulse {
+  50% {
+    box-shadow: 0 0 0 5px rgba($primary, 0.12);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .voice-search__button--listening {
+    animation: none;
+  }
+}

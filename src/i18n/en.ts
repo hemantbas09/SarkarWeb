@@ -28,6 +28,15 @@ export const en: Dictionary = {
     ],
     noResults: (query) => `No verified portals found matching “${query}”.`,
   },
+  voiceSearch: {
+    start: 'Search by voice',
+    stop: 'Stop listening',
+    listening: 'Listening…',
+    unsupported: 'Voice search is not supported in this browser.',
+    permissionDenied: 'Microphone access was denied. Allow access and try again.',
+    noSpeech: 'No speech was detected. Try again.',
+    error: 'Voice search could not start. Please try again.',
+  },
   essential: {
     eyebrow: 'Fast Direct Access',
     title: 'Essential Government Portals',
