@@ -5,10 +5,10 @@
   min-height: 12rem;
   flex-direction: column;
   align-items: flex-start;
-  padding: 1.25rem;
-  border: 1px solid $outline-variant;
+  padding: $space-md;
   border-radius: $radius-xl;
   background: $surface-container-lowest;
+  box-shadow: $shadow-sm;
   text-decoration: none;
   transition: box-shadow 0.2s ease, transform 0.2s ease;
 
@@ -18,7 +18,7 @@
   }
 
   &:focus-visible {
-    outline: 3px solid $tertiary-container;
+    outline: 3px solid $primary-container;
     outline-offset: 3px;
   }
 
@@ -38,8 +38,8 @@
     justify-content: center;
     flex-shrink: 0;
     border-radius: $radius-lg;
-    background: $surface-container-high;
-    color: $tertiary;
+    background: rgba($primary, 0.1);
+    color: $primary;
   }
 
   &__icon-symbol {
@@ -73,8 +73,8 @@
   &__count {
     padding: 2px $space-sm;
     border-radius: $radius-full;
-    background: $surface-container;
-    color: $secondary;
+    background: rgba($primary, 0.06);
+    color: $primary;
     font-size: $label-sm-size;
     line-height: $label-sm-line;
     font-weight: 600;

@@ -16,6 +16,7 @@ function PortalCard({
   const description = isCategoryItem
     ? itemDescription(t, item, lang)
     : t.essential.portalDescriptions[item.domain] ?? item.description
+  const title = lang === 'np' ? item.nepali : item.name
 
   return (
     <a
@@ -25,17 +26,24 @@ function PortalCard({
       rel="noopener noreferrer"
       lang={lang === 'np' ? 'ne' : 'en'}
     >
-      <span className="portal-card__icon" aria-hidden="true">
-        <span className="material-symbols-outlined portal-card__icon-symbol">
-          {item.icon}
+      <span className="portal-card__logo" aria-hidden="true">
+        <span className="portal-card__logo-fallback">
+          {Array.from(title.trim())[0]?.toLocaleUpperCase()}
         </span>
+        <img
+          className="portal-card__logo-image"
+          src={`https://${item.domain}/favicon.ico`}
+          alt=""
+          loading="lazy"
+          onError={(event) => {
+            event.currentTarget.hidden = true
+          }}
+        />
       </span>
       <span className="material-symbols-outlined portal-card__arrow" aria-hidden="true">
         north_east
       </span>
-      <h3 className="portal-card__title">
-        {lang === 'np' ? item.nepali : item.name}
-      </h3>
+      <h3 className="portal-card__title">{title}</h3>
       <p className="portal-card__description">{description}</p>
     </a>
   )

@@ -3,12 +3,8 @@
 .hero {
   position: relative;
   width: 100%;
-  padding: $space-md $gutter-mobile $space-lg;
-  background: linear-gradient(
-    to bottom,
-    $surface-container-low,
-    $surface
-  );
+  padding: $space-sm $gutter-mobile $space-sm;
+  background: $surface;
 
   &__glows {
     position: absolute;
@@ -50,33 +46,10 @@
     max-width: 36rem;
     margin: 0 auto;
     text-align: center;
-  }
 
-  &__badge {
-    display: inline-flex;
-    align-items: center;
-    gap: $space-xs;
-    padding: 4px $space-sm;
-    border-radius: $radius-full;
-    background: $surface-container-lowest;
-    box-shadow: $shadow-sm;
-  }
-
-  &__badge-dot {
-    width: 0.625rem;
-    height: 0.625rem;
-    border-radius: 50%;
-    background: $primary;
-    animation: hero-pulse 2s ease-in-out infinite;
-  }
-
-  &__badge-text {
-    color: $primary;
-    font-size: $label-sm-size;
-    line-height: $label-sm-line;
-    font-weight: 600;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
+    > .search-bar {
+      margin-top: $space-sm;
+    }
   }
 
   &__heading {
@@ -96,7 +69,7 @@
   }
 
   @media (min-width: $bp-md) {
-    padding: 4rem $margin 5rem;
+    padding: 1.5rem $margin $space-md;
 
     &__glow {
       &--primary {
@@ -120,25 +93,14 @@
 
     &__content {
       max-width: 64rem;
-    }
 
-    &__badge {
-      padding: $space-xs $space-md;
-      margin-bottom: $space-lg;
-
-      &-dot {
-        width: 0.5rem;
-        height: 0.5rem;
+      > .search-bar {
+        margin-top: $space-md;
       }
     }
 
-    &__badge-text {
-      color: $secondary;
-      letter-spacing: 0.1em;
-    }
-
     &__heading {
-      margin-bottom: $space-md;
+      margin-bottom: 0;
       max-width: 48rem;
       font-size: $display-size;
       line-height: $display-line;
@@ -148,19 +110,9 @@
 
     &__subheading {
       max-width: 42rem;
-      margin-bottom: $space-xl;
+      margin-bottom: $space-xs;
       font-size: $body-lg-size;
       line-height: $body-lg-line;
     }
-  }
-}
-
-@keyframes hero-pulse {
-  0%,
-  100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.4;
   }
 }

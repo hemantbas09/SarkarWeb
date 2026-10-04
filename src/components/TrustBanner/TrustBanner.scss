@@ -11,9 +11,9 @@
     flex-direction: column;
     gap: $space-md;
     padding: $space-md;
-    border: 1px solid $outline-variant;
     border-radius: $radius-xl;
     background: $surface-container-lowest;
+    box-shadow: $shadow-sm;
   }
 
   &__intro {
@@ -30,8 +30,8 @@
     width: 3rem;
     height: 3rem;
     border-radius: $radius-lg;
-    background: $surface-container-high;
-    color: $tertiary;
+    background: #f1f1f1;
+    color: $on-surface;
   }
 
   &__icon {
@@ -68,7 +68,8 @@
     min-width: 0;
     padding: $space-md;
     border-radius: $radius-lg;
-    background: $surface-container-low;
+    background: #f3f3f3;
+    box-shadow: $shadow-sm;
   }
 
   &__number {
@@ -79,8 +80,8 @@
     justify-content: center;
     margin-bottom: $space-sm;
     border-radius: 50%;
-    background: $surface-container-high;
-    color: $tertiary;
+    background: #e9e9e9;
+    color: $on-surface;
     font-size: $label-md-size;
     line-height: $label-md-line;
     font-weight: 700;

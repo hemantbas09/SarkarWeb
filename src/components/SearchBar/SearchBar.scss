@@ -2,7 +2,7 @@
 
 .search-bar {
   width: 100%;
-  max-width: 48rem;
+  max-width: 56rem;
   margin: 0 auto;
 
   &__input-wrap {
@@ -31,7 +31,7 @@
   &__input {
     flex: 1;
     min-width: 0;
-    height: 2.75rem;
+    height: 3rem;
     padding: 0 $space-sm;
     background: transparent;
     border: none;
@@ -209,7 +209,7 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    gap: $space-xs;
+    gap: $space-xs $space-sm;
     margin-top: $space-md;
   }
 
@@ -220,25 +220,39 @@
     margin-right: $space-xs;
   }
 
+  &__chip-group {
+    display: inline-flex;
+    align-items: center;
+    gap: $space-sm;
+    white-space: nowrap;
+  }
+
+  &__chip-separator {
+    color: $outline;
+  }
+
   &__chip {
-    padding: 4px $space-md;
+    padding: 0;
     border: none;
-    border-radius: $radius-full;
-    background: $surface-container-low;
-    color: $on-surface;
+    background: none;
+    color: $secondary;
     font-family: $font-sans;
     font-size: $label-sm-size;
     line-height: $label-sm-line;
     cursor: pointer;
-    transition: background-color 0.2s ease, color 0.2s ease;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    text-underline-offset: 3px;
+    transition: color 0.2s ease, text-decoration-color 0.2s ease;
 
     &:hover {
-      background: $surface-container;
+      color: $primary;
+      text-decoration-color: currentColor;
     }
 
     &--active {
-      background: $primary;
-      color: $on-primary;
+      color: $primary;
+      text-decoration-color: currentColor;
     }
   }
 
@@ -259,8 +273,9 @@
     }
 
     &__input {
-      height: 3rem;
+      height: 3.5rem;
       padding: 0 $space-md;
+      font-size: $body-lg-size;
     }
 
     &__clear {

@@ -15,7 +15,7 @@
     padding: $space-md $gutter-mobile $space-lg;
 
     &--essential {
-      padding-top: $space-lg;
+      padding-top: $space-md;
     }
 
     &--categories {
@@ -98,11 +98,11 @@
       padding: $space-xl $margin;
 
       &--essential {
-        padding-top: $space-xl;
+        padding-top: $space-lg;
       }
 
       &--categories {
-        padding-top: $space-xl;
+        padding-top: $space-lg;
         padding-bottom: $space-xl;
       }
     }

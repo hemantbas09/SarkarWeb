@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import data from '../../data/homepage.json'
 import categoryData from '../../data/categories'
 import { useLanguage } from '../../i18n'
@@ -14,12 +14,22 @@ function resolveRoute(path: string): string | null {
 
 function BottomNav() {
   const { t } = useLanguage()
+  const location = useLocation()
+  const selectedCategory =
+    location.pathname === '/category'
+      ? new URLSearchParams(location.search).get('c')
+      : null
+
   return (
     <nav className="bottom-nav">
       {data.bottomNav.map((item) => {
         const to = resolveRoute(item.path)
-        const className = `bottom-nav__item${item.active ? ' bottom-nav__item--active' : ''}`
-        const ariaCurrent = item.active ? 'page' : undefined
+        const isActive =
+          item.path === 'home'
+            ? location.pathname === '/'
+            : selectedCategory === item.path
+        const className = `bottom-nav__item${isActive ? ' bottom-nav__item--active' : ''}`
+        const ariaCurrent = isActive ? 'page' : undefined
         const content = (
           <>
             <span className="material-symbols-outlined bottom-nav__icon">

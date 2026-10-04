@@ -54,7 +54,7 @@
     justify-content: space-between;
     gap: $space-sm;
     padding: $space-sm 0;
-    border-top: 1px solid rgba(42, 71, 115, 0.15);
+    border-top: 1px solid rgba($on-surface, 0.15);
     font-size: $label-md-size;
     line-height: $label-md-line;
   }

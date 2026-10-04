@@ -23,20 +23,37 @@
     outline-offset: 3px;
   }
 
-  &__icon {
-    display: flex;
+  &__logo {
+    position: relative;
+    display: inline-flex;
     width: 3.5rem;
     height: 3.5rem;
     align-items: center;
     justify-content: center;
     margin-bottom: $space-md;
-    border-radius: $radius-xl;
-    background: $surface-container-high;
-    color: $tertiary;
   }
 
-  &__icon-symbol {
-    font-size: 26px;
+  &__logo-image,
+  &__logo-fallback {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  &__logo-image {
+    position: relative;
+    z-index: 1;
+    object-fit: contain;
+  }
+
+  &__logo-fallback {
+    position: absolute;
+    display: grid;
+    place-items: center;
+    border-radius: $radius-lg;
+    background: $surface-container;
+    color: $primary;
+    font-size: 1.25rem;
+    font-weight: 700;
   }
 
   &__arrow {

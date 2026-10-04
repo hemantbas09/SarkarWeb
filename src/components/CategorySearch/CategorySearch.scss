@@ -50,44 +50,4 @@
     }
   }
 
-  &__chips {
-    display: flex;
-    align-items: center;
-    gap: $space-xs;
-    overflow-x: auto;
-    margin-top: $space-sm;
-    scrollbar-width: none;
-
-    &::-webkit-scrollbar {
-      display: none;
-    }
-  }
-
-  &__chip {
-    flex-shrink: 0;
-    padding: 0.25rem 0.75rem;
-    border: none;
-    border-radius: $radius-full;
-    background: $surface-container-low;
-    color: $secondary;
-    font-size: $label-sm-size;
-    line-height: $label-sm-line;
-    cursor: pointer;
-    transition: background-color 0.15s ease, color 0.15s ease;
-
-    &:hover {
-      color: $on-surface;
-    }
-
-    &--active {
-      background: $primary;
-      color: $on-primary;
-    }
-  }
-
-  @media (min-width: $bp-md) {
-    &__chips {
-      display: none;
-    }
-  }
 }

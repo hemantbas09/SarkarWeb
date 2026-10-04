@@ -8,10 +8,6 @@ function Hero() {
   return (
     <section className="hero">
       <div className="hero__content">
-        <div className="hero__badge">
-          <span className="hero__badge-dot" aria-hidden="true" />
-          <span className="hero__badge-text">{t.hero.badge}</span>
-        </div>
         <h1 className="hero__heading">{t.hero.heading}</h1>
         <p className="hero__subheading">{t.hero.subheading}</p>
         <SearchBar />

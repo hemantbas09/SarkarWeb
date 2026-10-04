@@ -155,19 +155,25 @@ function SearchBar() {
         <span className="search-bar__chips-label">
           {t.hero.popularSearchesLabel}
         </span>
-        {t.hero.quickChips.map((chip) => (
-          <button
-            key={chip.query}
-            className={`search-bar__chip${query === chip.query ? ' search-bar__chip--active' : ''}`}
-            type="button"
-            onClick={() => {
-              setQuery(chip.query)
-              setFocused(true)
-              inputRef.current?.focus()
-            }}
-          >
-            {chip.label}
-          </button>
+        {t.hero.quickChips.map((chip, index) => (
+          <span className="search-bar__chip-group" key={chip.query}>
+            <button
+              className={`search-bar__chip${query === chip.query ? ' search-bar__chip--active' : ''}`}
+              type="button"
+              onClick={() => {
+                setQuery(chip.query)
+                setFocused(true)
+                inputRef.current?.focus()
+              }}
+            >
+              {chip.label}
+            </button>
+            {index < t.hero.quickChips.length - 1 && (
+              <span className="search-bar__chip-separator" aria-hidden="true">
+                ·
+              </span>
+            )}
+          </span>
         ))}
       </div>
     </div>

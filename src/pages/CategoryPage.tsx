@@ -28,7 +28,6 @@ function CategoryPage() {
   const dict = t.categoryPage.categories[key as CategoryKey]
 
   const [query, setQuery] = useState('')
-  const [activeSector, setActiveSector] = useState('all')
   const [activeProvince, setActiveProvince] = useState('all')
   const [activeDistrict, setActiveDistrict] = useState('all')
   const [page, setPage] = useState(1)
@@ -40,7 +39,6 @@ function CategoryPage() {
 
   useEffect(() => {
     setQuery('')
-    setActiveSector('all')
     setActiveProvince('all')
     setActiveDistrict('all')
     setPage(1)
@@ -49,7 +47,7 @@ function CategoryPage() {
 
   useEffect(() => {
     setPage(1)
-  }, [query, activeSector, activeProvince, activeDistrict])
+  }, [query, activeProvince, activeDistrict])
 
   const categoryItems = data.items.filter((item) => item.code === key)
 
@@ -69,14 +67,13 @@ function CategoryPage() {
   )].sort()
 
   const filtered = categoryItems.filter((item) => {
-    const matchesSector = activeSector === 'all' || item.sector === activeSector
     const matchesProvince =
       activeProvince === 'all' || item.province === activeProvince
     const matchesDistrict =
       activeDistrict === 'all' || item.district === activeDistrict
     const q = query.trim().toLowerCase()
     const matchesQuery = !q || scoreItem(item, q) >= 0
-    return matchesSector && matchesProvince && matchesDistrict && matchesQuery
+    return matchesProvince && matchesDistrict && matchesQuery
   })
 
   const pageSize = pagination?.pageSize ?? filtered.length
@@ -88,7 +85,6 @@ function CategoryPage() {
 
   const handleReset = () => {
     setQuery('')
-    setActiveSector('all')
     setActiveProvince('all')
     setActiveDistrict('all')
   }
@@ -120,8 +116,6 @@ function CategoryPage() {
                 categoryKey={key as CategoryKey}
                 value={query}
                 onChange={setQuery}
-                activeSector={activeSector}
-                onSelectSector={setActiveSector}
               />
               {regionFilter && (
                 <RegionFilter
