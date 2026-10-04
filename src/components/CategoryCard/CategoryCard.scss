@@ -2,19 +2,19 @@
 
 .category-card {
   display: flex;
-  min-height: 9.875rem;
+  min-height: 12rem;
   flex-direction: column;
   align-items: flex-start;
-  padding: $space-md;
+  padding: 1.25rem;
   border: 1px solid $outline-variant;
   border-radius: $radius-xl;
   background: $surface-container-lowest;
   text-decoration: none;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
 
   &:hover {
-    border-color: $secondary-fixed-dim;
-    box-shadow: $shadow-sm;
+    box-shadow: $shadow-md;
+    transform: translateY(-4px);
   }
 
   &:focus-visible {
@@ -27,13 +27,13 @@
     width: 100%;
     align-items: flex-start;
     justify-content: space-between;
-    margin-bottom: $space-sm;
+    margin-bottom: 0.75rem;
   }
 
   &__icon {
     display: flex;
-    width: 2.25rem;
-    height: 2.25rem;
+    width: 2.75rem;
+    height: 2.75rem;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
@@ -43,7 +43,7 @@
   }
 
   &__icon-symbol {
-    font-size: 20px;
+    font-size: 22px;
   }
 
   &__arrow {
@@ -58,11 +58,16 @@
 
   &__title {
     width: 100%;
-    margin: 0;
+    margin: 0 0 0.25rem;
     color: $on-surface;
-    font-size: $title-sm-size;
-    line-height: $title-sm-line;
+    font-size: $title-md-size;
+    line-height: $title-md-line;
     font-weight: $title-sm-weight;
+    transition: color 0.2s ease;
+  }
+
+  &:hover &__title {
+    color: $primary;
   }
 
   &__count {
@@ -78,17 +83,16 @@
 
   &__description {
     display: -webkit-box;
-    min-height: 2.5rem;
     margin: 0;
     color: $on-surface-variant;
-    font-size: $body-sm-size;
-    line-height: $body-sm-line;
+    font-size: $body-md-size;
+    line-height: $body-md-line;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
     overflow: hidden;
   }
 
   @media (min-width: $bp-md) {
-    padding: $space-md;
+    padding: 1.25rem;
   }
 }
